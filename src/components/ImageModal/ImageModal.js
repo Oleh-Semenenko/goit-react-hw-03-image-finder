@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import { LargeImage, modalStyles } from './ImageModal.styled';
+import PropTypes from 'prop-types';
 
 Modal.setAppElement('#root');
 
@@ -17,3 +18,10 @@ const ImageModal = ({ url, description, modalIsOpen, closeModal }) => {
 };
 
 export default ImageModal;
+
+ImageModal.propTypes = {
+  url: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  modalIsOpen: PropTypes.bool.isRequired,
+  closeModal: PropTypes.func.isRequired,
+};

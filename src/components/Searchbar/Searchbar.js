@@ -7,17 +7,22 @@ import {
   SearchInput,
   SearchBtnText,
 } from './Searchbar.styled';
+import PropTypes from 'prop-types';
 
 class Searchbar extends Component {
   state = {
     searchQuery: '',
   };
 
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired
+  };
+
   handleSubmit = event => {
     event.preventDefault();
 
     this.props.onSubmit(this.state.searchQuery);
-    // this.reset();
+    this.reset();
   };
 
   handleChange = event => {

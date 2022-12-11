@@ -1,10 +1,17 @@
 import { Component } from 'react';
 import ImageModal from '../ImageModal';
 import { GalleryItem, GalleryImage } from './ImageGalleryItem.styled';
+import PropTypes from 'prop-types';
 
 class ImageGalleryItem extends Component {
   state = {
     isOpen: false,
+  };
+
+  static propTypes = {
+    webformatURL: PropTypes.string.isRequired,
+    largeImageURL: PropTypes.string.isRequired,
+    tags: PropTypes.string.isRequired,
   };
 
   toggleModal = () => {
